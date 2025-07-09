@@ -8,7 +8,7 @@ import { HomeIcon } from '@heroicons/react/24/outline';
 import Logo from '../logo';
 const links = [
   { name: 'Home', href: '/', icon: HomeIcon },
-  { name: 'Cars', href: '/cars' },
+  { name: 'Cars', href: '/Cars' },
   { name: 'About Us', href: '/about' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
