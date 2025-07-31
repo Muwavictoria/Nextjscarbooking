@@ -9,7 +9,7 @@ export default function CarsPage() {
   return (
     <>
     <section className="w-full mt-20">
-                  <h1 className="text-3xl font-bold mb-4">Available Cars</h1>
+                  <h1 className="text-3xl font-bold mb-4 dark:text-white dark bg-gray-900">Available Cars</h1>
           
         </section>
         <CarGrid cars={mockCars} />

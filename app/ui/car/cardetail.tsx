@@ -21,7 +21,7 @@ export default function CarDetailPage({
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white mt-10 rounded-lg shadow">
+    <div className="max-w-4xl mx-auto p-6 bg-white mt-10 rounded-lg shadow  dark:text-white dark:bg-gray-900">
       {car.image && (
         <Image
           src={car.image.startsWith('/') ? car.image : `/img/${car.image}`}

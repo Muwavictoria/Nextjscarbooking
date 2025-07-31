@@ -21,25 +21,28 @@ export default function CarDetailPage({
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white mt-10 rounded-lg shadow">
-      {car.image && (
-        <Image
-          src={car.image.startsWith('/') ? car.image : `/img/${car.image}`}
-          alt={car.car_name}
-          height={563}
-          width={460}
-          className="w-full h-64 object-cover rounded mb-6"
-        />
-      )}
-      <h1 className="text-3xl font-bold mb-2">{car.car_name}</h1>
-      <p className="text-xl text-blue-600 font-semibold mb-2">
-        UGX {car.price.toLocaleString()}
-      </p>
-      <p className="text-gray-700 mb-1">Number Plate: {car.number_plate}</p>
-      <p className="text-gray-700 mb-1">Color: {car.color ?? 'Not specified'}</p>
-      <p className="text-gray-700 mb-1">Seats: {car.seats ?? 'Not specified'}</p>
-      <p className="mt-4 text-gray-800">{car.description ?? 'No description available.'}</p>
-    </div>
+    <div className="max-w-4xl mx-auto p-6 bg-white mt-10 rounded-lg shadow dark:text-white dark:bg-gray-900">
+  {car.image && (
+    <Image
+      src={car.image.startsWith('/') ? car.image : `/img/${car.image}`}
+      alt={car.car_name}
+      height={256} // 64 * 4 = 256px
+      width={1024} // Optional, just to give a good size hint
+      className="w-full h-90 object-contain rounded mb-6"
+    />
+  )}
+  <h1 className="text-3xl font-bold mb-2">{car.car_name}</h1>
+  <p className="text-xl text-blue-600 font-semibold mb-2">
+    UGX {car.price.toLocaleString()}
+  </p>
+  <p className="text-gray-700 mb-1">Number Plate: {car.number_plate}</p>
+  <p className="text-gray-700 mb-1">Color: {car.color ?? 'Not specified'}</p>
+  <p className="text-gray-700 mb-1">Seats: {car.seats ?? 'Not specified'}</p>
+  <p className="mt-4 text-gray-800">
+    {car.description ?? 'No description available.'}
+  </p>
+</div>
+
   );
 }
 

@@ -12,7 +12,7 @@ interface Car {
 
 export default function CarCard({ car }: { car: Car }) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden pt-20">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden pt-20  dark:text-white dark:bg-gray-900">
       <Image
         src={car.image || "/img/default.jpg"}
         alt={car.car_name}
