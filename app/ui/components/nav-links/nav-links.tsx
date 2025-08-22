@@ -4,13 +4,17 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import clsx from 'clsx';
-import { HomeIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, BookOpenIcon, CreditCardIcon, UserIcon } from '@heroicons/react/24/outline';
 import Logo from '../logo';
+
 const links = [
   { name: 'Home', href: '/', icon: HomeIcon },
   { name: 'Cars', href: '/Cars' },
-  { name: 'About Us', href: '/about' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Bookings', href: '/bookings', icon: BookOpenIcon },
+  { name: 'Payments', href: '/payments', icon: CreditCardIcon },
+  { name: 'Profile', href: '/profile', icon: UserIcon },
+  { name: 'About Us', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -46,13 +50,12 @@ export default function NavLinks() {
         </button>
 
         {/* Nav Links */}
-                    <nav
-            className={clsx(
-                'w-full items-start gap-4 md:flex md:w-auto md:flex-row md:items-center md:gap-6',
-                menuOpen ? 'flex flex-col mt-4' : 'hidden md:flex'
-            )}
-            >
-
+        <nav
+          className={clsx(
+            'w-full items-start gap-4 md:flex md:w-auto md:flex-row md:items-center md:gap-6',
+            menuOpen ? 'flex flex-col mt-4' : 'hidden md:flex'
+          )}
+        >
           {links.map(({ name, href, icon: Icon }) => (
             <Link
               key={name}

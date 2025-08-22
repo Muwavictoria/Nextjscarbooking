@@ -1,7 +1,9 @@
 import "./globals.css";
 import { inter } from "./fonts";
 import { Metadata } from "next";
-
+import ReduxProvider from './lib/ReduxProvider';
+import ThemeProvider from './lib/ThemeProvider';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 export const metadata: Metadata = {
   title: "Car Booking",
@@ -18,7 +20,13 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
-        {children}
+        <ReduxProvider>
+          <AppRouterCacheProvider>
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+          </AppRouterCacheProvider>
+        </ReduxProvider>
       </body>
     </html>
   );
